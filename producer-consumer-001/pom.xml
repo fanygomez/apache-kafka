@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.kafka.practice001</groupId>
-	<artifactId>producer-consumer-001</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>producer-consumer-001</name>
-	<description>producer-consumer-001</description>
+	<artifactId>producer-consumer-example</artifactId>
+	<version>1.0.0</version>
+	<name>producer-consumer-example</name>
+	<description>producer-consumer-example</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -58,7 +58,38 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<mainClass>com.kafka.practice001.ProducerConsumer001Application</mainClass> <!-- Cambia por la clase principal de tu aplicación -->
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+				<executions>
+					<execution>
+						<id>default-resources</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>resources</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+
 
 </project>
